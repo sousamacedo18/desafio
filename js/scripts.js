@@ -1,4 +1,47 @@
 $(document).ready(function(){
+
+async function montarCursos()
+{
+  let _htmldestaque="";
+  const url = "http://localhost:5000/curso";
+  const response = await fetch(url,
+    {
+      method: "GET",
+      headers:{
+        "Content-type":"application/json",
+      }
+    }
+   )
+       .then((response) => response.json())
+       .then((data) => {
+        const curso = data.curso;
+           for(var i=0; curso.length<=8;i++){
+            if(i<=1){
+            _htmldestaque+= "<div class=card-destaque>"
+            _htmldestaque+= "<img src=\"./assets/img/mecanico.jpg\">"
+            _htmldestaque+=  "<div class=reacao>"
+            _htmldestaque+= " <div>"
+            _htmldestaque+="<label>Automóveis</label>"
+            _htmldestaque+=" </div>"
+            _htmldestaque+= "<div>"
+            _htmldestaque+= "<i class=bi bi-hand-thumbs-up></i>"
+            _htmldestaque+="<label>"+curso[i].like+"</label>"
+            _htmldestaque+="<i class=bi bi-hand-thumbs-down></i>"
+            _htmldestaque+= "<label>"+curso[i].deslike+"</label>"
+            _htmldestaque+= "<i class=bi bi-star></i>"
+            _htmldestaque+=  "</div>"
+            _htmldestaque+= " </div>"
+            _htmldestaque+= "</div>"
+            }
+            if(i>1 && i<=6){
+            }
+           }
+            $(".destaque").html(_htmldestaque);
+      
+       });
+}
+montarCursos();
+
 async function logar(){
    const logado = JSON.parse(sessionStorage.getItem('login')||0);
    const email=document.getElementById("email").value;
