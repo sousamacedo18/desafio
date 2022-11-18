@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>Document</title>
+    <style>
+        .container{
+                    padding-top: 10px;
+                    width: 70%;
+                   
+                }
+
+         .topo{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+         
+         }
+         .logo{
+            width: 25%;
+         }
+         .menu{
+            display: flex;
+            flex-direction: row;
+            width: 75%;
+            align-self: center;
+            justify-content: center;
+            
+         }
+         .menu a{
+            text-decoration: none;
+            margin-right: 10px;
+            color: silver;
+         }
+         .menu a:hover{
+            color: #3333;
+         }
+    
+         .destaque{
+               
+               margin: 10px;
+               width: 100%;
+               margin: auto;
+               display: flex;
+               flex-direction: row;
+              
+               }
+        .foto_destaque{
+                    width: 50%;
+          
+                }
+        img{
+                    width: 100%;
+         
+        }
+        img{
+                    width: 100%;
+         
+        }
+        .miniaturas{
+                  
+                    width: 100%;
+           
+                   
+                }
+        .reacao{
+                    
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    background-color: silver;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    opacity : 0.7;
+                    position: relative;
+                    margin-top: -30px;
+
+                }
+       .card{
+        width: 25%;
+       }
+       .reacao-miniatura{
+                    
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    background-color: silver;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    opacity : 0.7;
+                    position: relative;
+                    margin-top: -30px;
+
+                }
+        .reacao_topo{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .reacao_rodape{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .rodape > p{
+            margin-left: 40px;
+        }
+        .btn_react{
+            cursor: pointer;
+        }
+        .linha{
+            border: solid 1px;
+            width: 90%;
+            margin: auto;
+            color:white;
+        }
+        .rodape{
+            background-color: black;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+  
+        .rodape h1{
+            color: white;
+            text-align: center;
+        }
+        .rodape p{
+            color: white;
+            font-size: small;
+        }
+    
+    </style>
+         <script>
+            async function logar(){
+             
+                    const response = await fetch('http://localhost:5000/'
+                    ).then(resp=>{
+                        const names = resp
+                         console.log(names); 
+                    })}
+
+        </script>
+</head>
+<body>
+    <div class="container">
+        <div class="topo">
+         <div class="logo">
+            <h1>Seu Curso</h1>
+         </div>
+         <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Favoritos</a>
+            <a href="#" onclick="logar()">Login</a>
+         </div>
+        </div>
+        <div class="destaque">
+            <div class="foto_destaque">
+                <img src="../backend/assets/img/mecanica2.jfif"/>
+                <div class="reacao">
+                    <div>
+                        <label>
+                            Automovéis
+                        </label>
+                    </div>
+                    <div>
+                        <i class="bi bi-hand-thumbs-up btn_react" ></i>
+                        <label>20</label>
+                        <i class="bi bi-hand-thumbs-down  btn_react"></i>
+                        <label>0</label>
+                        <i class="bi bi-heart  btn_react"></i>      
+                    </div>
+
+                </div>
+            </div>
+            <div class="foto_destaque">
+                <img src="../backend/assets/img/mecanica2.jfif"/>
+                <div class="reacao">
+                    <div>
+                        <label>
+                            Mecânica de Automovéis
+                        </label>
+                    </div>
+                    <div>
+                        <i class="bi bi-hand-thumbs-up"></i>
+                        <label>20</label>
+                        <i class="bi bi-hand-thumbs-down"></i>
+                        <label>0</label>
+                        <i class="bi bi-heart"></i>      
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="miniaturas">
+
+              <div class="reacao_topo">
+                <div class="card">
+                            <img src="../backend/assets/img/mecanica2.jfif"/>
+                            <div class="reacao-miniatura">
+                            <div>
+                                <label>
+                                    Automovéis
+                                </label>
+                            </div>
+                            <div>
+                                <i class="bi bi-hand-thumbs-up"></i>
+                                <label>20</label>
+                                <i class="bi bi-hand-thumbs-down"></i>
+                                <label>0</label>
+                                <i class="bi bi-heart"></i>      
+                            </div>
+                            </div>
+                </div>
+                <div class="card">
+                            <img src="../backend/assets/img/mecanica2.jfif"/>
+                            <div class="reacao-miniatura">
+                            <div>
+                                <label>
+                                    Automovéis
+                                </label>
+                            </div>
+                            <div>
+                                <i class="bi bi-hand-thumbs-up"></i>
+                                <label>20</label>
+                                <i class="bi bi-hand-thumbs-down"></i>
+                                <label>0</label>
+                                <i class="bi bi-heart"></i>      
+                            </div>
+                            </div>
+                </div>
+                <div class="card">
+                            <img src="../backend/assets/img/mecanica2.jfif"/>
+                            <div class="reacao-miniatura">
+                            <div>
+                                <label>
+                                    Auto
+                                </label>
+                            </div>
+                            <div>
+                                <i class="bi bi-hand-thumbs-up"></i>
+                                <label>20</label>
+                                <i class="bi bi-hand-thumbs-down"></i>
+                                <label>0</label>
+                                <i class="bi bi-heart"></i>      
+                            </div>
+                            </div>
+                </div>
+
+              </div>
+              <div class="reacao_rodape">
+                <div class="card">
+                            <img src="../backend/assets/img/mecanica2.jfif"/>
+                            <div class="reacao-miniatura">
+                            <div>
+                                <label>
+                                    Auto
+                                </label>
+                            </div>
+                            <div>
+                                <i class="bi bi-hand-thumbs-up"></i>
+                                <label>20</label>
+                                <i class="bi bi-hand-thumbs-down"></i>
+                                <label>0</label>
+                                <i class="bi bi-heart"></i>      
+                            </div>
+                        </div>
+                </div>
+                <div class="card">
+                            <img src="../backend/assets/img/mecanica2.jfif"/>
+                            <div class="reacao-miniatura">
+                            <div>
+                                <label>
+                                    Auto
+                                </label>
+                            </div>
+                            <div>
+                                <i class="bi bi-hand-thumbs-up"></i>
+                                <label>20</label>
+                                <i class="bi bi-hand-thumbs-down"></i>
+                                <label>0</label>
+                                <i class="bi bi-heart"></i>      
+                            </div>
+                           </div>
+                </div>
+                <div class="card">
+                            <img src="../backend/assets/img/mecanica2.jfif"/>
+                            <div class="reacao-miniatura">
+                            <div>
+                                <label>
+                                    Auto
+                                </label>
+                            </div>
+                            <div>
+                                <i class="bi bi-hand-thumbs-up"></i>
+                                <label>20</label>
+                                <i class="bi bi-hand-thumbs-down"></i>
+                                <label>0</label>
+                                <i class="bi bi-heart"></i>      
+                            </div>
+                        </div>
+                </div>
+        </div>
+        <div class="rodape">
+                <div class="logo-rodape"><h1>Seu Curso</div>
+               <div class="linha"></div>
+               <p>Todos os direitos reservados</p>
+        </div>
+        </div>
+  
+
+   
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
