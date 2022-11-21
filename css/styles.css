@@ -80,3 +80,6 @@ img{
 .reacao-rodape .card{
     width: 33.33%;
 }
+i{
+    cursor: pointer;
+}

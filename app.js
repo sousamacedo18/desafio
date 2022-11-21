@@ -66,11 +66,11 @@ app.post('/feedback',(req,res)=>{
               response:null
             })
           }
-          if(resultado.length>0){
-            return res.status(406).send({
-              mensagem:"Reação duplicada!"
-            })
-          }
+          // if(resultado.length>0){
+          //   return res.status(406).send({
+          //     mensagem:"Reação duplicada!"
+          //   })
+          // }
           mysql.getConnection((error,conn)=>{
             conn.query(
               "INSERT INTO `reacao`(`usuarioid`, `cursoid`, `feedback`) value(?,?,?)",
@@ -83,11 +83,27 @@ app.post('/feedback',(req,res)=>{
                     response:null
                   })
                 }
-                res.status(200).send({
-                  mensagem:"Dados da reação!!!!",
-                  reacao:resultado
-                
-                })
+                mysql.getConnection((error,conn)=>{
+                  conn.query(
+                    `SELECT COUNT(*) as total FROM 
+                    reacao WHERE reacao.cursoid=? and feedback=?`,
+                    [idcurso,feedback],
+                    (error,resultado,field)=>{
+                      conn.release();
+                      if(error){
+                       return res.status(500).send({
+                          error:error,
+                          response:null
+                        })
+                      }
+                      res.status(200).send(
+                        {
+                          mensagem:"Contagem de reações",
+                          total:resultado.total
+                        }
+                      )
+                    });
+                  });
                }
               )
             })
